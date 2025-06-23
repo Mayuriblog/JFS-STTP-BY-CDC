@@ -44,8 +44,10 @@ To https://github.com/Mayuriblog/JFS-STTP-BY-CDC.git
  * [new branch]      master -> master
 
 E:\JFS_STTP_BY_CDC>
--------------------------------------------------after including some content or files in local folder-------------------------------------------
+-------------------------------------------------after including some content or files in local folder------------------------
+
 E:\JFS_STTP_BY_CDC>git status
+
 On branch master
 Changes not staged for commit:
   (use "git add/rm <file>..." to update what will be committed)
@@ -63,7 +65,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 E:\JFS_STTP_BY_CDC>git add *.*
 
+
 E:\JFS_STTP_BY_CDC>git commit -m "day 1"
+
 [master a32e065] day 1
  5 files changed, 40 insertions(+)
  create mode 100644 Exception Handling.txt
@@ -72,6 +76,7 @@ E:\JFS_STTP_BY_CDC>git commit -m "day 1"
  delete mode 100644 ~$NTENT JFS.docx
 
 E:\JFS_STTP_BY_CDC>git push origin master
+
 fatal: credential-cache unavailable; no unix socket support
 To https://github.com/Mayuriblog/JFS-STTP-BY-CDC.git
  ! [rejected]        master -> master (fetch first)
@@ -83,6 +88,7 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 E:\JFS_STTP_BY_CDC>git pull origin master
+
 remote: Enumerating objects: 7, done.
 remote: Counting objects: 100% (7/7), done.
 remote: Compressing objects: 100% (6/6), done.
@@ -97,6 +103,7 @@ Merge made by the 'ort' strategy.
  create mode 100644 README.md
 
 E:\JFS_STTP_BY_CDC>git push origin master
+
 fatal: credential-cache unavailable; no unix socket support
 Enumerating objects: 12, done.
 Counting objects: 100% (11/11), done.
