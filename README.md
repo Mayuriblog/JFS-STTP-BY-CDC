@@ -1,7 +1,8 @@
 E:\JFS_STTP_BY_CDC>git init
+
 Initialized empty Git repository in E:/JFS_STTP_BY_CDC/.git/
 
-E:\JFS_STTP_BY_CDC>git add *.*
+E:\JFS_STTP_BY_CDC>git add *.*     
 
 E:\JFS_STTP_BY_CDC>git commit -m "day 1"
 
