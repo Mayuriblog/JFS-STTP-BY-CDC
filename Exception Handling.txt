@@ -1,0 +1,40 @@
+Exceptions & Exception Handling:
+======================
+Errors:
+-------
+Syntactical mistakes in the program causes compile time errors. The error must be rectified in the program and must be recompiled.
+
+Once compilation is successful .class file will be generated, tha must be executed through java interpreter.
+
+Exceptions:
+------------
+Exceptions are always raises at runtime.
+
+But sometime exceptions are detected at compile time, such exceptions are called as checked/compile time detected exceptions.
+
+Some exceptions cannot be predicted at compile, they raise directly at runtime such exceptions are alled as unchecked/runtime detected exceptions.
+
+Unchecked Exceptions:
+-------------------------
+Some numeric value divided by zero causes ArithmeticException
+
+Iterating over loop beyond the array index causes ArrayIndexOutofBoudException.
+
+String str; // String class reference declaration
+str=new String(); // is a String object creation
+class references are always initialized to null until they are instantiated.
+On such null referenced class reference if we invoke a method, NullPointerException araises.
+
+In threads giving thread priority beyond 1 to 10, may be less than 1 or more than 10 causes IllegalArgumentException.
+
+Unchecked Exceptions are caused by user given wrong value, developer written logical mistake.
+
+Unchecked  Exceptions cannot be predictable at compile-time, if they cause at runtime, developer must handle such exception at development time.
+
+CheckedException/Compile-time detected Exception:
+-----------------------------------------------------------
+When we use java class constructors and methods, if they suspect exception causes at runtime, they force us to handle exception at compile-time. Such exception are called as CheckedExceptions.
+
+
+
+
