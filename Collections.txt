@@ -1,0 +1,69 @@
+java.util package classes:
+---------------------------
+Legacy classes
+Collection classes
+Miscellaneous classes
+
+Compare arrays with Collection classes:
+-------------------------------------------
+i) Arrays are fixed in size
+Collections are variable in size. Collection class object size can grow and shrink.
+
+ii) Arrays are homogeneous
+Collections re heterogeneous
+
+iii) Dealing with indexes in arrays leads to errors
+Collections are having convenient methods called add(), get(), remove() using which without errors we can perform operations on elements.
+
+
+Legacy classes:
+JDK 1.2 version before classes means (JDK 1.1) are called as legacy classes.
+Vector, Stack, Hashtable, Properties, Enumeration
+
+Collection classes:
+ArrayList, LinkedList, HashSet, TreeSet, LinkedHashSet, HashMap, TreeMap, LinkedHashMap, Iterator, ListIterator
+
+Miscellaneous classes:
+Scanner, StringTokenizer, Date, Gregorian Calendar, Timer, Timer Task, Locale, ResourceBundle
+
+Comparision b/w Legacy classes and Collection classes:
+-------------------------------------------------------------
+In Legacy classes all the methods are synchronized
+In Collection classes the methods are not sychronized
+
+open command prompt and type
+javap java.util.Vector
+javap java.util.Hashtable
+javap java.util.ArrayList
+javap java.util.HashMap
+
+Vector:
+-------
+Vector is a class in java.util package. It organizes the elements at sequential indexes like 0,1,2,3,4....
+
+boolean add(Object o) 
+void add(int index, Object o)
+int capaity()
+void clear()
+Object clone()
+boolean contains(Object o)
+Object elementAt(int index)
+Enumeration elements()
+Object get(int index)
+int indexOf(Object o)
+int insertElementAt(int index, Object o)
+boolean isEmpty()
+Iterator iterator()
+int lastIndexOf(Object o)
+ListIterator listIterator()
+boolean remove(Object o) 
+Object remove(int index)
+void removeAllElements()
+set(int index, Object o)
+int size()
+Object[] toArray()
+
+
+
+// <String> applying generics on Legacy class
+
