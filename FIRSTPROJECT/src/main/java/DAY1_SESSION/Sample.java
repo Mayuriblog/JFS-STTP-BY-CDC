@@ -1,4 +1,4 @@
-package SampleDemo;
+package DAY1_SESSION;
 class Jfs{
     int a;
     float x;
