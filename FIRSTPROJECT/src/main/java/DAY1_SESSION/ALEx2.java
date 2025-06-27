@@ -1,9 +1,11 @@
+package DAY1_SESSION;
+
 import java.util.*;
 class ALEx2
 {
 	public static void main(String args[])
 	{
-		List<Integer> marks=new ArrayLIst<Integer>();
+		List<Integer> marks=new ArrayList<>();
 		marks.add(75);
 		marks.add(65);
 		marks.add(55);

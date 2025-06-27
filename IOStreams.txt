@@ -1,0 +1,43 @@
+IOStreams
+=======
+FileInputStream, FileOutputStream
+BufferedInputStream, BufferedOutputStream
+FileReader, FileWriter
+BufferedReader, BufferedWriter
+Serialization (ObjectOutputStream, ObjectInputStream)
+--------------------******************-------------------------------
+InputStream and OutputStream read and writes stream of bytes (ASCII range chars, each char occupies 1 byte memory). ASCII 0-255
+
+Reader and Writer read and writes stream of chars (Unicode range chars, each char occupies 2 bytes of memory). Unicode 0-65535
+
+InputStream and its sub class FileInputStream contains one important method called 
+  public int read()
+  reads each character and returns its ASCII value
+
+OutputStream and its sub class FileOutputStream contains one important method called 
+  public void write(int i)
+  takes char ASCII values, but writes original char into output stream
+--------------------******************-------------------------------
+Text files can be read and write using DataInputStream and DataOutputStream.
+While creating DataInputStream give FileInputStream object as argument, so that it will read line-line data from a file.
+DataInputStream:
+  read line-line of data
+  String readLine()
+  
+While creating DataOutputStream give FileOutputStream object as argument, so that it will write line-line of data into a file.  
+DataOutputStream:
+  writes line-line of data
+  void writeBytes(String str)
+  void writeChars(String str)
+--------------------******************-------------------------------
+Text / Binary files can be read and write using BufferedInputStream and BufferedOutputStream.
+While creating BufferedInputStream give FileInputStream object and buffer size  as arguments, so that it will read buffer-buffer data from a file.
+DataInputStream:
+  read buffer-buffer of data
+  int read(byte[], int start, int len)
+  
+While creating BufferedOutputStream give FileOutputStream object and buffer size as argument, so that it will write buffer-buffer of data into a file.  
+DataOutputStream:
+  writes buffer-buffer of data
+  void write(byte b][, int start, int len)
+--------------------******************-------------------------------
