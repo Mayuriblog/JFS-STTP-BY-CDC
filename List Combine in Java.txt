@@ -1,0 +1,24 @@
+List<Employee(empId,name,age,salary)> employeeList;
+ 
+List<Address(empId,name,address)> addressList;
+ 
+List<EmployeeDetail(empId,name,age,address,salary)> employeeDetailList;
+
+int idx=0;
+for(Employee emp:employeeList) {
+	for(Address addr:addressList) {
+		if(emp.getEmpId()==addr.getEmpId()) {
+			EmployeeDetail ed=new EmployeeDetail(emp.getEmpid(), emp.getName(), emp.getAge(), add.getAddress(), emp.getSalary());
+	}
+}
+
+
+List<EmployeeDetail> employeeDetailList = employeeList.stream()
+    .map(e -> new EmployeeDetail(e.getEmpId(), e.getName(), e.getAge(),
+        addressList.stream()
+            .filter(a -> a.getEmpId() == e.getEmpId())
+            .map(Address::getAddress)
+            .findFirst()
+            .orElse(null),
+        e.getSalary()))
+    .collect(Collectors.toList());
