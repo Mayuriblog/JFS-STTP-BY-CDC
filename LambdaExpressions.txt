@@ -1,0 +1,208 @@
+Lambda Expression:
+=============
+Lambda Expression helps us to write our code in functional style. It provides a clear and concise way to implement SAM (Single Abstract Method) interface by using an expression. It is very useful in collection library in which it helps to iterate, filte and extract data. 
+
+The Lambda expression is used to provide the implementation of an interface which has functional interface. It saves a lot of code. In case of lambda expression, we don't need to define the method again for providing the implementation. Here, we just write the implementation code. 
+
+Java lambda expression is treated as a function, so compiler does not create .class file. 
+
+Functional Interface :
+-----------------------
+Lambda expression provides implementation of functional interface. An interface which has only one abstract method is called functional interface. Java provides an anotation 
+@FunctionalInterface, which is used to declare an interface as functional interface. 
+
+Why use Lambda Expression 
+	1. To provide the implementation of Functional intrerface 
+	2. Less coding 
+
+Lambda Expression Syntax 
+	(arguments-list) -> { body }
+	
+Java Lambda Expression consists of 3 components: 
+	1. arguments-list: It can be empty or non-empty 
+	2. arrow-token: It is used to link argument-list and body expression 
+	3. body: It contains expressions and statements for lambda expression
+
+Without Lambda Expression: 
+interface Drawable { 
+	public void draw(); 
+}
+
+class LambdaExpressionExample { 
+	public static void main(String… rags) { 
+		int width=10; 
+		Drawable d=new Drawable() { 
+			public void draw() { 
+				System.out.println(“Drawing ”+width); 
+			} 
+		}; 
+		d.draw(); 
+	} 
+}
+
+Java Lambda Expression Example: 
+Now we are implementing the same example using Lambda Expression. 
+
+@FunctionalInterface 
+interface Drawable { 
+	public void draw(); 
+} 
+class LambdaExpressionExample2 { 
+	public static void main(String… rags) { 
+		int width=10; 
+		Drawable d=()-> { 
+			System.out.println(“Drawing”); 
+		}; 
+		d.draw(); 
+	} 
+}
+
+Lambda Expression with Single Parameter: 
+interface Sayable { 
+	public String say(String name); 
+} 
+class LambdaExpressionExample3 { 
+	public static void main(String… rags) { 
+		Sayable s1=(name)-> { 
+			return “Hello “+name; 
+		}; 
+		System.out.println(s1.say(“Active Surya”)); 
+	} 
+}
+
+Lambda Expression with Multiple Parameters: 
+interface Addable { 
+	public int add(int a, int b); 
+} 
+class LambdaExpressionExample4 { 
+	public static void main(String… rags) { 
+		// Labmda Expression without return keyword 
+		Addable ad1=(a,b)->(a+b); 
+		System.out.println(ad1.add(10,20)); 
+		
+		// Lambda Expression with return keyword 
+		Addable ad2=(int a,int b)->{ 
+			return (a+b); 
+		}; 
+		System.out.println(ad2.add(10,20)); 
+	} 
+}
+
+Lambda with Foreach Loop: 
+class LambdaExpressionExample5 { 
+	public static void main(String… rags) { 
+		List<Striing> list=new ArrayList<String>(); 
+		list.add(“Surya”); 
+		list.add(“narayana”); 
+		list.add(“ABC”); 
+		list.add(“XYZ”); 
+		list.forEach( 
+			(n)->System.out.println(n); 
+		); 
+	} 
+} 
+
+Method Reference:
+---------------------
+Java provides a new feature called method reference in Java 8. Method reference is used to refer functional interface. It is compact and easy form of lambda expression. Each time when you are using lambda expression to just referring a method, you can replace lambda expression with method reference. 
+Types of Method References: 
+	1. Reference to a static method 
+	2. Reference to a instance method 
+	3. Reference to a constructor 
+
+Reference to a static method: 
+---------------------------------
+Syntax: 
+	ContainingClass::staticMethodName 
+Example 1 
+	interace Sayable { 
+		void say(); 
+	} 
+	class MethodReference { 
+		public static void saySomething() { 
+			System.out.println(“Hello, this is static method”); 
+		} 
+		public static void main(String rags[]) { 
+			Sayable sayable=MethodReference::saySomething; 
+			sayable.say(); 
+		} 
+	} 
+
+Example 2: 
+public class MethodReference2 { 
+	public static void ThreadStatus(){ 
+		System.out.println("Thread is running..."); 
+	} 
+	public static void main(String[] args) { 
+		Thread t2=new Thread(MethodReference2::ThreadStatus); 
+		t2.start(); 
+	} 
+} 
+
+Reference to a instance method: 
+------------------------------------
+Like static methods, you can also refer instance method. Static method must be refered using ContainingClassName:staticMethodName. Where as instance methods must be refered using objectName:methodName. 
+
+Example 1: 
+	interface Sayable{ 
+		void say(); 
+	} 
+	public class InstanceMethodReference { 
+		public void saySomething(){ 
+			System.out.println("Hello, this is non-static method."); 
+		} 
+		public static void main(String[] args) { 
+			
+			InstanceMethodReference methodReference = new InstanceMethodReference(); // Creating object 
+			// Referring non-static method using reference 
+			Sayable sayable = methodReference::saySomething; 
+			// Calling interface method 
+			sayable.say(); 
+			
+			// Referring non-static method using anonymous object 
+			Sayable sayable2 = new InstanceMethodReference()::saySomething; // You can use anonymous object also 
+			// Calling interface method 
+			sayable2.say(); 
+		}
+}
+
+Example 2: 
+public class InstanceMethodReference2 { 
+	public void printnMsg(){ 
+		System.out.println("Hello, this is instance method"); 
+	} 
+	public static void main(String[] args) { 
+		Thread t2=new Thread(new InstanceMethodReference2()::printnMsg); 
+		t2.start(); 
+	}	 
+}
+ 
+Reference to a constructor: 
+-------------------------------
+We can refer constructor by using the new keyword. 
+
+Syntax: ClassName::new 
+
+Example: 
+interface Messageable{ 
+	Message getMessage(String msg); 
+} 
+
+class Message{ 
+	Message(String msg){ 
+		System.out.print(msg); 
+	} 
+} 
+
+public class ConstructorReference { 
+	public static void main(String[] args) { 
+		Messageable hello = Message::new; 
+		hello.getMessage("Hello"); 
+	} 
+}
+
+
+
+
+	
+	
