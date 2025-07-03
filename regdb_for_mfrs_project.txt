@@ -1,0 +1,3 @@
+create database jfsdb;
+use jfsdb;
+create table reg(regid int primary key,fname varchar(20),lname varchar(20),email varchar(20),pass varchar(20),mobile long,address varchar(40));

@@ -1,0 +1,26 @@
+create table register (
+  regid integer,
+  fname varchar(20),
+  lname varchar(20),
+  email varchar(20),
+  pass varchar(20),
+  mobile bigint,
+  address  varchar(50),
+  constraint register_regid_pk primary key(regid)
+);
+  
+create table tasks (
+  taskid integer, 
+  taskname varchar(50),
+  taskdate varchar(10),
+  taskstatus integer(1) check (taskstatus IN (1,2,3)),
+  regid integer,
+  constraint tasks_taskid_regid_cpk primary key(taskid, regid),
+  constraint tasks_regid_fk foreign key(regid) references register(regid)  
+);
+
+create table taskid_pks (
+  regid integer,
+  taskid integer,
+  constraint taskid_pks_regid_fk foreign key(regid) references register(regid)
+);
