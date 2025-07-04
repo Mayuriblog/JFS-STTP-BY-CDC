@@ -30,7 +30,7 @@ public class ThirdServlet extends HttpServlet {
 			long mobile=Long.parseLong(request.getParameter("mobile").trim());
 			String address=request.getParameter("address").trim();
 			
-			// 
+			// we need to retrieve first and second form data from HttpSession object
 			
 			String fname=session.getAttribute("fname").toString();
 			String lname=session.getAttribute("lname").toString();
