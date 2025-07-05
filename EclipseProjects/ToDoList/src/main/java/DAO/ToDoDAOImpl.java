@@ -24,7 +24,7 @@ public class ToDoDAOImpl implements ToDoDAO {
 			con=DBConn.getConn();
 			stmt=con.createStatement();
 			pstmt1=con.prepareStatement("INSERT INTO register VALUES (?,?,?,?,?,?,?)");
-			pstmt2=con.prepareStatement("INSERT INTO tasks VALUES (?,?,?,?,?)");
+			pstmt2=con.prepareStatement("INSERT INTO tasks VALUES (?,?,?,?,?,?)");
 			pstmt3=con.prepareStatement("INSERT INTO taskid_pks VALUES (?,?) ");
 			pstmt4=con.prepareStatement("UPDATE taskid_pks SET taskid=? WHERE regid=?");
 		} catch(Exception e) {
@@ -105,6 +105,7 @@ public class ToDoDAOImpl implements ToDoDAO {
 			pstmt2.setString(3, task.getTaskDate());
 			pstmt2.setInt(4, task.getTaskStatus());
 			pstmt2.setInt(5, task.getTaskregid());
+			pstmt2.setInt(6, regid);
 			i=pstmt2.executeUpdate();
 			
 			if(isNew) {
